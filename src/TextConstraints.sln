@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TextConstraints.Generator",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextConstraints.WordTrees", "TextConstraints.WordTrees\TextConstraints.WordTrees.csproj", "{6AC415C6-0000-48FC-872A-D168939784C6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextConstraints.WordTrees.REPL", "TextConstraints.WordTrees.REPL\TextConstraints.WordTrees.REPL.csproj", "{BFC9AA72-A95F-4952-B203-265CE0D364FB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{6AC415C6-0000-48FC-872A-D168939784C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6AC415C6-0000-48FC-872A-D168939784C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6AC415C6-0000-48FC-872A-D168939784C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFC9AA72-A95F-4952-B203-265CE0D364FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFC9AA72-A95F-4952-B203-265CE0D364FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFC9AA72-A95F-4952-B203-265CE0D364FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFC9AA72-A95F-4952-B203-265CE0D364FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
