@@ -1,4 +1,4 @@
-# TextConstraints
+# 🔓 TextConstraints
 
 **TextConstraints** is a few simple libraries for producing policies with regard to passwords and text validation written in **C#**.
 
