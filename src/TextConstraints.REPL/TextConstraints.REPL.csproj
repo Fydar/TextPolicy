@@ -9,4 +9,10 @@
     <ProjectReference Include="..\TextConstraints\TextConstraints.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="output.bin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
