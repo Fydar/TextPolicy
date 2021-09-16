@@ -22,6 +22,8 @@ namespace PasswordChecker
 			var tree = WordTree.ReadFromBytes(File.ReadAllBytes("output.bin"));
 
 			var policy = new TextPolicyBuilder("password_policy")
+				.UseTextRule(new RequireCharactersTextRule(1, char.IsUpper))
+				.UseTextRule(new RequireCharactersTextRule(1, char.IsNumber))
 				.UseTextRule(new NotSingleWordTextRule(tree))
 				.Build();
 

@@ -7,6 +7,8 @@ namespace TextConstraints.REPL
 {
 	internal class Program
 	{
+		private const string charset = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 !\"£$% ^&*() - _ = +[{]}#~'@;:/?.>,<\\|";
+
 		private static void Main(string[] args)
 		{
 			Console.ForegroundColor = ConsoleColor.DarkGray;
@@ -26,7 +28,6 @@ namespace TextConstraints.REPL
 
 		private static void InteractiveLoop()
 		{
-			string charset = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 !\"£$% ^&*() - _ = +[{]}#~'@;:/?.>,<\\|";
 			var tree = WordTree.ReadFromBytes(File.ReadAllBytes("output.bin"));
 
 			var charsetRule = new CharsetTextRule(charset);
@@ -35,6 +36,10 @@ namespace TextConstraints.REPL
 				.UseTextRule(new LengthTextRule(4, 32))
 				.UseTextRule(charsetRule)
 				.UseTextRule(new NotSingleWordTextRule(tree))
+				.UseTextRule(new RequireCharactersTextRule(1, char.IsUpper))
+				.UseTextRule(new RequireCharactersTextRule(1, char.IsNumber))
+				.UseTextRule(new RequireCharactersTextRule(1, c => char.IsPunctuation(c) || char.IsSymbol(c)))
+				.UseTextRule(new RequireCharactersTextRule(1, char.IsLower))
 				.Build();
 
 			var sb = new StringBuilder();
@@ -109,6 +114,30 @@ namespace TextConstraints.REPL
 
 				case NotSingleWordTextRule:
 					ruleName = "Not a word";
+					break;
+
+				case RequireCharactersTextRule requirement:
+
+					var sb = new StringBuilder();
+					sb.Append(requirement.MinAmount);
+					sb.Append(" of ");
+
+					int samples = 0;
+					foreach (var character in charset)
+					{
+						var result = requirement.Evaluate(new char[] { character });
+						if (result.Status == RuleStatus.Passed)
+						{
+							sb.Append(character);
+							samples++;
+						}
+						if (samples > 5)
+						{
+							break;
+						}
+					}
+
+					ruleName = sb.ToString();
 					break;
 
 				default:
