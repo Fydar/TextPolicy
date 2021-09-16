@@ -7,13 +7,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TextConstraints", "TextCons
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TextConstraints.Generator", "TextConstraints.Generator\TextConstraints.Generator.csproj", "{6779FD86-8AEA-48FC-9A68-44AD396A5268}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextConstraints.REPL", "TextConstraints.REPL\TextConstraints.REPL.csproj", "{8457798E-E386-4D13-BBF0-6BB1A41CFEE7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TextConstraints.REPL", "TextConstraints.REPL\TextConstraints.REPL.csproj", "{8457798E-E386-4D13-BBF0-6BB1A41CFEE7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextConstraints.WordTrees", "TextConstraints.WordTrees\TextConstraints.WordTrees.csproj", "{6AC415C6-0000-48FC-872A-D168939784C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TextConstraints.WordTrees", "TextConstraints.WordTrees\TextConstraints.WordTrees.csproj", "{6AC415C6-0000-48FC-872A-D168939784C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextConstraints.WordTrees.REPL", "TextConstraints.WordTrees.REPL\TextConstraints.WordTrees.REPL.csproj", "{BFC9AA72-A95F-4952-B203-265CE0D364FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TextConstraints.WordTrees.REPL", "TextConstraints.WordTrees.REPL\TextConstraints.WordTrees.REPL.csproj", "{BFC9AA72-A95F-4952-B203-265CE0D364FB}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TextConstraints.Documentation", "TextConstraints.Documentation\TextConstraints.Documentation.csproj", "{46CC5A10-0599-46B2-8870-8C9985B8CB9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PasswordChecker", "PasswordChecker\PasswordChecker.csproj", "{D176B55C-06D2-434B-A2FD-DC775D05F315}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{46CC5A10-0599-46B2-8870-8C9985B8CB9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{46CC5A10-0599-46B2-8870-8C9985B8CB9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{46CC5A10-0599-46B2-8870-8C9985B8CB9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D176B55C-06D2-434B-A2FD-DC775D05F315}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D176B55C-06D2-434B-A2FD-DC775D05F315}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D176B55C-06D2-434B-A2FD-DC775D05F315}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D176B55C-06D2-434B-A2FD-DC775D05F315}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
