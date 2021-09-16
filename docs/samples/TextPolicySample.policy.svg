@@ -1,4 +1,4 @@
-<svg viewBox="0 0 1200 393" width="1200" height="393" xmlns ="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 1200 477" width="1200" height="477" xmlns ="http://www.w3.org/2000/svg">
 
 	<defs>
 		<clipPath id="round-left-corners">
@@ -47,19 +47,27 @@
 	<text x="38" y="325" class="c-ln">16</text>
 	<text x="38" y="346" class="c-ln">17</text>
 	<text x="38" y="367" class="c-ln">18</text>
+	<text x="38" y="388" class="c-ln">19</text>
+	<text x="38" y="409" class="c-ln">20</text>
+	<text x="38" y="430" class="c-ln">21</text>
+	<text x="38" y="451" class="c-ln">22</text>
 	<text x="64" y="10" class="code"><tspan class="c-keyword">var</tspan> <tspan class="c-local">tree</tspan> = <tspan class="c-class">WordTree</tspan>.<tspan class="c-method">ReadFromBytes</tspan>(<tspan class="c-class">File</tspan>.<tspan class="c-method">ReadAllBytes</tspan>(<tspan class="c-string">"output.bin"</tspan>));</text>
 	<text x="64" y="52" class="code"><tspan class="c-keyword">var</tspan> <tspan class="c-local">policy</tspan> = <tspan class="c-keyword">new</tspan> <tspan class="c-class">TextPolicyBuilder</tspan>(<tspan class="c-string">"password_policy"</tspan>)</text>
 	<text x="101.44" y="73" class="code">.<tspan class="c-method">UseTextRule</tspan>(<tspan class="c-keyword">new</tspan> <tspan class="c-class">LengthTextRule</tspan>(<tspan class="c-numeric">4</tspan>, <tspan class="c-numeric">32</tspan>))</text>
 	<text x="101.44" y="94" class="code">.<tspan class="c-method">UseTextRule</tspan>(<tspan class="c-keyword">new</tspan> <tspan class="c-class">CharsetTextRule</tspan>(<tspan class="c-string">"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"</tspan>))</text>
 	<text x="101.44" y="115" class="code">.<tspan class="c-method">UseTextRule</tspan>(<tspan class="c-keyword">new</tspan> <tspan class="c-class">NotSingleWordTextRule</tspan>(<tspan class="c-local">tree</tspan>))</text>
-	<text x="101.44" y="136" class="code">.<tspan class="c-method">Build</tspan>();</text>
-	<text x="64" y="178" class="code"><tspan class="c-keyword">var</tspan> <tspan class="c-local">result</tspan> = <tspan class="c-local">policy</tspan>.<tspan class="c-method">Evaluate</tspan>(<tspan class="c-string">"Password!23"</tspan>);</text>
-	<text x="64" y="220" class="code"><tspan class="c-control">if</tspan> (<tspan class="c-local">result</tspan>.<tspan class="c-property">Status</tspan> == <tspan class="c-enum">RuleStatus</tspan>.<tspan class="c-field">Passed</tspan>)</text>
-	<text x="64" y="241" class="code">{</text>
-	<text x="101.44" y="262" class="code"><tspan class="c-class">Console</tspan>.<tspan class="c-method">WriteLine</tspan>(<tspan class="c-string">"Passed!"</tspan>);</text>
-	<text x="64" y="283" class="code">}</text>
-	<text x="64" y="304" class="code"><tspan class="c-control">else</tspan></text>
+	<text x="101.44" y="136" class="code">.<tspan class="c-method">UseTextRule</tspan>(<tspan class="c-keyword">new</tspan> <tspan class="c-class">RequireCharactersTextRule</tspan>(<tspan class="c-numeric">1</tspan>, <tspan class="c-keyword">char</tspan>.<tspan class="c-method">IsUpper</tspan>))</text>
+	<text x="101.44" y="157" class="code">.<tspan class="c-method">UseTextRule</tspan>(<tspan class="c-keyword">new</tspan> <tspan class="c-class">RequireCharactersTextRule</tspan>(<tspan class="c-numeric">1</tspan>, <tspan class="c-keyword">char</tspan>.<tspan class="c-method">IsNumber</tspan>))</text>
+	<text x="101.44" y="178" class="code">.<tspan class="c-method">UseTextRule</tspan>(<tspan class="c-keyword">new</tspan> <tspan class="c-class">RequireCharactersTextRule</tspan>(<tspan class="c-numeric">1</tspan>, <tspan class="c-parameter">c</tspan> <tspan class="c-method">=&gt;</tspan> <tspan class="c-keyword">char</tspan>.<tspan class="c-method">IsPunctuation</tspan>(<tspan class="c-parameter">c</tspan>) <tspan class="c-structure">||</tspan> <tspan class="c-keyword">char</tspan>.<tspan class="c-method">IsSymbol</tspan>(<tspan class="c-parameter">c</tspan>)))</text>
+	<text x="101.44" y="199" class="code">.<tspan class="c-method">UseTextRule</tspan>(<tspan class="c-keyword">new</tspan> <tspan class="c-class">RequireCharactersTextRule</tspan>(<tspan class="c-numeric">1</tspan>, <tspan class="c-keyword">char</tspan>.<tspan class="c-method">IsLower</tspan>))</text>
+	<text x="101.44" y="220" class="code">.<tspan class="c-method">Build</tspan>();</text>
+	<text x="64" y="262" class="code"><tspan class="c-keyword">var</tspan> <tspan class="c-local">result</tspan> = <tspan class="c-local">policy</tspan>.<tspan class="c-method">Evaluate</tspan>(<tspan class="c-string">"Password!23"</tspan>);</text>
+	<text x="64" y="304" class="code"><tspan class="c-control">if</tspan> (<tspan class="c-local">result</tspan>.<tspan class="c-property">Status</tspan> == <tspan class="c-enum">RuleStatus</tspan>.<tspan class="c-field">Passed</tspan>)</text>
 	<text x="64" y="325" class="code">{</text>
-	<text x="101.44" y="346" class="code"><tspan class="c-class">Console</tspan>.<tspan class="c-method">WriteLine</tspan>(<tspan class="c-string">"Failed!"</tspan>);</text>
+	<text x="101.44" y="346" class="code"><tspan class="c-class">Console</tspan>.<tspan class="c-method">WriteLine</tspan>(<tspan class="c-string">"Passed!"</tspan>);</text>
 	<text x="64" y="367" class="code">}</text>
+	<text x="64" y="388" class="code"><tspan class="c-control">else</tspan></text>
+	<text x="64" y="409" class="code">{</text>
+	<text x="101.44" y="430" class="code"><tspan class="c-class">Console</tspan>.<tspan class="c-method">WriteLine</tspan>(<tspan class="c-string">"Failed!"</tspan>);</text>
+	<text x="64" y="451" class="code">}</text>
 </svg>
