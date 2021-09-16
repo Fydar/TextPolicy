@@ -27,12 +27,14 @@ namespace TextConstraints.REPL
 		private static void InteractiveLoop()
 		{
 			string charset = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 !\"£$% ^&*() - _ = +[{]}#~'@;:/?.>,<\\|";
+			var tree = WordTree.ReadFromBytes(File.ReadAllBytes("output.bin"));
 
 			var charsetRule = new CharsetTextRule(charset);
 
 			var policy = new TextPolicyBuilder("password_policy")
 				.UseTextRule(new LengthTextRule(4, 32))
 				.UseTextRule(charsetRule)
+				.UseTextRule(new NotSingleWordTextRule(tree))
 				.Build();
 
 			var sb = new StringBuilder();
@@ -103,6 +105,10 @@ namespace TextConstraints.REPL
 
 				case CharsetTextRule:
 					ruleName = "Charset";
+					break;
+
+				case NotSingleWordTextRule:
+					ruleName = "Not a word";
 					break;
 
 				default:
